@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div>
+    {% for row in rows %}
+      <div class="icon-social-media">
+          {% if row.content['#row']._entity.name.value == "Facebook" %}
+            <a target="_blank" href="{{row.content['#row']._entity.field_lien.value[0].uri}}"><i class="fab fa-facebook-f fa-3x social-facebook"></i></a>
+          {% elseif row.content['#row']._entity.name.value == "LinkedIn" %}
+            <a target="_blank" href="{{row.content['#row']._entity.field_lien.value[0].uri}}"><i class="fab fa-linkedin-in fa-3x social-linkedin"></i></a>
+          {% elseif row.content['#row']._entity.name.value == "Instagram" %}
+            <a target="_blank" href="{{row.content['#row']._entity.field_lien.value[0].uri}}"><i class="fab fa-instagram fa-3x social-instagram"></i></a>
+          {% endif %}
+      </div>
+    {% endfor %}
+</div>
+

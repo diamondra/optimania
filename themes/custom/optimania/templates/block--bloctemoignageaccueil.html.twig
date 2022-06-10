@@ -1,0 +1,87 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{% set temoignages = terms_temoignage %}
+<div>
+  <div class="title_services_accueil">
+    <h2>Nos clients en témoignent</h2>
+  </div>
+  <div id="carousel_temoignage" class="carousel slide">
+    <div class="row">
+      <div class="carousel_control col-lg-1 col-1">
+        <a class="carousel-control-prev" href="#carousel_temoignage" role="button" data-slide="prev">
+          <div class="button-prev-triangle"></div>
+        </a>
+      </div>
+      <div class="carousel-inner col-lg-10 col-10">
+          {% for key,value in temoignages %}
+          {% if key == 0 %}
+        <div class="carousel-item active">
+            {% else %}
+          <div class="carousel-item">
+              {% endif %}
+            <div class="bloc_temoignage row">
+              <div class="bloc_image_temoignage col-lg-3 col-12">
+                  <span class="circle-image">
+                   <img src="{{ value.image }}"/>
+                  </span>
+                  <div class="bloc_image_temoignage_pers">
+                    <div>{{ value.person }}</div>
+                    <div>{{ value.poste }}</div>
+                    <div>{{ value.secteur }}</div>
+                  </div>
+              </div>
+              <div class="bloc_contenu_temoignage col-lg-5 col-12">
+                <div>{{ value.contenu | raw }}</div>
+              </div>
+              <div class="bloc_video_temoignage col-lg-4 col-12">
+                <div class="img_temoignage" style="background-image: url({{ value.image }});" alt="{{ value.tname }}"></div>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+        <div class="carousel_control col-lg-1 col-1">
+          <a class="carousel-control-next" href="#carousel_temoignage" role="button" data-slide="next">
+            <div class="button-next-triangle"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

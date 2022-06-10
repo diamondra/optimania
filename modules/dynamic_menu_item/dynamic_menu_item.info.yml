@@ -1,0 +1,16 @@
+name: Dynamic Menu Item
+description: 'Creates dynamic menu item with ability to attach nodes.'
+type: module
+core_version_requirement: ^8.8 || ^9
+
+package: Menu
+dependencies:
+  - drupal:menu_ui
+  - drupal:menu_link_content
+
+configure: dynamic_menu_item.settings
+
+# Information added by Drupal.org packaging script on 2020-11-08
+version: '8.x-1.0'
+project: 'dynamic_menu_item'
+datestamp: 1604821824

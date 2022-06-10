@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bartik theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function optimania_preprocess_html(&$variables) {
+  // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-first';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-second';
+  }
+  else {
+    $variables['attributes']['class'][] = 'layout-no-sidebars';
+  }
+
+  if (!empty($variables['page']['featured_top'])) {
+    $variables['attributes']['class'][] = 'has-featured-top';
+  }
+
+}
+
+function optimania_preprocess(&$variables, $hook)
+{
+$vid = 'slider_';
+$term_data = [];
+   $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+   foreach ($terms as $term) {
+     $term_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid);
+     $url = "";
+     if(isset($term_obj->get('field_image')->entity)){
+       $url = file_create_url($term_obj->get('field_image')->entity->getFileUri());
+     }
+
+     $term_data[] = [
+       'tid' => $term->tid,
+       'tname' => $term->name,
+       'texte' => $term_obj->get('field_texte'),
+       'image_url' => $url,
+     ];
+   }
+   $variables['terms_slider'] = $term_data;
+
+   $term_data_temoignage= [];
+   $temoignage_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('temoignage');
+    foreach ($temoignage_terms as $term_temoignage) {
+    $term_obj_temoignage = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_temoignage->tid);
+    $url = "";
+     if(isset($term_obj_temoignage->get('field_image_temoignage')->entity)){
+       $url = file_create_url($term_obj_temoignage->get('field_image_temoignage')->entity->getFileUri());
+     }
+     $term_data_temoignage[] = [
+         'tid' => $term_temoignage->tid,
+         'tname' => $term_temoignage->name,
+         'person' => $term_obj_temoignage->get('field_nom')->getValue()[0]['value'],
+         'poste' => $term_obj_temoignage->get('field_poste')->getValue()[0]['value'],
+         'secteur'=> $term_obj_temoignage->get('field_secteur')->getValue()[0]['value'],
+         'image' => $url,
+         'contenu' => $term_obj_temoignage->get('field_contenu')->getValue()[0]['value'],
+     ];
+  }
+
+  $variables['terms_temoignage'] = $term_data_temoignage;
+
+ try{
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'introduction', '=')
+      ->condition('title', 'Intro')
+      ->range(0,1)
+      ->execute();
+    $node = "";
+    foreach($nids as $key => $value){
+      $node = $value;
+      break;
+    }
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load((int)$node);
+    $variables['introduction'] = $node;
+  }
+  catch (\Exception $e){
+
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function optimania_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__'.$content_type;
+  }
+}
+
+/**
+ * @param array $suggestions
+ * @param array $variables
+ * @param $hook
+ */
+function optimania_theme_suggestions_views_view_field_alter(array &$suggestions, array &$variables, $hook)
+{
+    if ($variables['view']->id() && $variables['view']->current_display) {
+        $suggestions[] = $hook . '__' . $variables['view']->id() . '__' . $variables['view']->current_display . '__' . $variables['field']->field;
+
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views template suggestions.
+ *
+ * @inheritdoc
+ */
+function optimania_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'views_view__' . $variables['view']->id();
+}
+
+/**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
+function optimania_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  // Add view mode theme suggestions.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function optimania_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'views_view_unformatted__' . $variables['view']->id();
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function optimania_theme_suggestions_image_formatter_alter(array &$suggestions, array $variables) {
+  $entity = $variables['item']->getEntity();
+  $field_name = $variables['item']->getParent()->getName();
+  $suggestions[] = 'image_formatter__' . $entity->getEntityTypeId() . '__' . $entity->bundle() . '__' . $field_name;
+}
