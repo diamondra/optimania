@@ -7,26 +7,26 @@
           {% else %}
             <div class="carousel-item">
           {% endif %}
-              <div class="item-flex-slide">
-                <div style="width: 40%; text-align: center; vertical-align: middle; padding-top: 5%;">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6" style="text-align: center; vertical-align: middle; padding-top: 5%;">
                   <div style="margin: 5%;">
-                    <h4>Dirigeants et chef d'entreprise</h4>
+                    <h4 class="chef-accueil-slider">Dirigeants et chef d'entreprise</h4>
                   </div>
                   <div>
                     <h3 class="liberez_du_temps">Libérez du temps!</h3>
                   </div>
                   <ul class="banner-point">
                       {% for text in terms[key].texte %}
-                          <li class="item-slide" style="font-weight: 400;"><span>{{ text.properties.value.value }}</span></li>
+                          <li class="item-slide"><span>{{ text.properties.value.value }}</span></li>
                       {% endfor %}
                   </ul>
                 </div>
-                <div style="width: 60%;">
-                 <svg width="100" height="auto" viewbox="0 0 100 100" preserveAspectRatio="none" style="position: absolute">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                 {#<svg width="100" height="auto" viewbox="0 0 100 100" preserveAspectRatio="none" style="position: absolute">
                     <path d="M0,0
                      L100,0
                      C25,50 50,75 0,100z" fill="#ffc000" />
-                  </svg>
+                  </svg>#}
                   <div class="image_slider_accueil" style="background-image: url({{ value.image_url }});" alt="{{ value.tname }}"></div>
 
                 </div>
