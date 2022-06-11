@@ -239,7 +239,7 @@ body {
 
 .banner-point li {
     list-style-type: none !important;
-    font-size: 2vw;
+    /*font-size: 2vw;*/
 }
 
 .banner-point {
@@ -277,7 +277,7 @@ body {
 }
 .liberez_du_temps {
     color: #26b7b4;
-    font-size: 4vw;
+    /*font-size: 4vw;*/
 }
 
 .item-slide {
@@ -317,7 +317,7 @@ body {
     margin-bottom: 2%;
     text-align: center;
     color: #607d8b;
-    /*font-size: 2.3rem;*/
+    font-size: 2.3rem;
     /* text-transform: uppercase; */
     /*font-family: fantasy;*/
 }
@@ -341,7 +341,7 @@ body {
 .title_service {
     text-decoration: none;
     text-align: center !important;
-    font-size: 4vw;
+    /*font-size: 4vw;*/
     color: #26b7b4;
     padding: 5% 5% 5% 5%;
     margin-bottom: 0px;
@@ -357,7 +357,7 @@ body {
 
 .know_more a {
     color: #26b7b4;
-    font-size: 3vw;
+    /*font-size: 3vw;*/
     float: right;
     font-weight: bold;
 }
@@ -377,7 +377,7 @@ body {
 }
 
 .field_accueil_resume_service, .know_more {
-    font-size: 3vw;
+    /*font-size: 3vw;*/
 }
 
 .img_temoignage {
@@ -714,16 +714,16 @@ body {
 .bloc_contenu_temoignage {
     text-align: center;
     padding: 10px;
-    font-size: 2vw;
+    /*font-size: 2vw;*/
 }
 
 .bloc_image_temoignage_pers {
     margin-top: 10px;
-    font-size: 2vw;
+    /*font-size: 2vw;*/
 }
 
 .carousel_control {padding: 0 !important;}
-.chef-accueil-slider { font-size: 3vw; }
+/*.chef-accueil-slider { font-size: 3vw; }*/
 
 .responsive-menus.responsified .responsive-menus-simple {
     width: 100%;
@@ -733,7 +733,14 @@ body {
     background: #26b7b4;
     color: #ffffff;
     box-shadow: 2px 2px 2px #767676;
-    font-size: 5vw;
+    /*font-size: 5vw;*/
     font-weight: bold;
     width: 10vw;
+}
+
+@media only screen and (max-width: 675px) {
+    .chef-accueil-slider { font-size: 3vw; }
+    .liberez_du_temps { font-size: 3.5vw; }
+    .banner-point li { font-size: 2vw; }
+    .title_services_accueil h2 { font-size: 5vw; }
 }
