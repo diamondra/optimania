@@ -724,3 +724,16 @@ body {
 
 .carousel_control {padding: 0 !important;}
 .chef-accueil-slider { font-size: 3vw; }
+
+.responsive-menus.responsified .responsive-menus-simple {
+    width: 100%;
+    background: #f8f8f8;
+}
+.responsive-menus.responsified span.toggler {
+    background: #26b7b4;
+    color: #ffffff;
+    box-shadow: 2px 2px 2px #767676;
+    font-size: 5vw;
+    font-weight: bold;
+    width: 10vw;
+}
