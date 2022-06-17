@@ -742,8 +742,8 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * @see \Drupal\Core\Extension\ExtensionDiscovery::scanDirectory()
  */
 $settings['file_scan_ignore_directories'] = [
-  'node_modules',
-  'bower_components',
+    'node_modules',
+    'bower_components',
 ];
 
 /**
@@ -793,9 +793,9 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  */
 #
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-   include $app_root . '/' . $site_path . '/settings.local.php';
+    include $app_root . '/' . $site_path . '/settings.local.php';
 }
-$databases['default']['default'] = array (
+/*$databases['default']['default'] = array (
   'database' => 'optimania',
   'username' => 'root',
   'password' => '',
@@ -804,9 +804,9 @@ $databases['default']['default'] = array (
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
-);
+);*/
 
-/*$databases['default']['default'] = array (
+$databases['default']['default'] = array (
     'database' => 'optimania',
     'username' => 'Diamondra',
     'password' => 'Optimania2022',
@@ -815,5 +815,5 @@ $databases['default']['default'] = array (
     'port' => '35319',
     'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
     'driver' => 'mysql',
-);*/
+);
 $settings['config_sync_directory'] = 'sites/default/files/config_rZFQz7Fakyb_LukAD5bCq0t6YYfp2Wnb0ebHXeUIsn0cm7i5BoUAQsAe0Js5B3JnJn7gezQnTA/sync';
