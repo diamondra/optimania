@@ -250,7 +250,7 @@ body {
 .image_slider_accueil {
     background-repeat: no-repeat;
     background-size: contain;
-    height: 500px;
+    height: 100%;
     /*border-color: transparent transparent #000 transparent;
     border-radius: 0 0 240px 50%/60px;
     border: solid 5px #000;*/
@@ -328,7 +328,7 @@ body {
 }
 
 .ligne{
-    margin-bottom: 1rem;
+   padding: 10px;
 }
 
 .ligne:hover .title_service {
@@ -424,42 +424,6 @@ body {
 
 .bloc_image_temoignage {
     text-align: center;
-}
-
-.button-next-triangle, .button-prev-triangle {
-    position:relative;
-    height:100px;
-    font-size:30px;
-    line-height:30px;
-    display:inline-block;
-}
-.button-prev-triangle:before{
-    content: "";
-    position: absolute;
-    border-right: 30px solid #26b7b4;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    top: 0;
-    left: 0;
-}
-
-.button-next-triangle:before{
-    content: "";
-    position: absolute;
-    border-left: 30px solid #26b7b4;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    top: 0;
-    left: 0;
-}
-
-#carousel_temoignage .carousel-control-next, #carousel_temoignage  .carousel-control-prev {
-    position: inherit;
-}
-
-.carousel_control {
-    margin: auto;
-    padding: 30px;
 }
 
 .slick-item {
@@ -566,7 +530,9 @@ body {
 }
 
 .button-next-triangle, .button-prev-triangle {
+    color: #26b7b4;
     animation: hideshow 2s ease infinite;
+    font-size: 5vw;
 }
 
 .carousel-control-next, .carousel-control-prev { opacity: 1!important; }
@@ -743,4 +709,27 @@ body {
     .liberez_du_temps { font-size: 3.5vw; }
     .banner-point li { font-size: 2vw; }
     .title_services_accueil h2 { font-size: 5vw; }
+    .texts-slider {
+        text-align: center; vertical-align: middle; padding-top: 5%;height: 30vh;
+    }
+    .image-temoignage {
+        width: 30vw;
+        height: 30vw;
+    }
+    .button-next-triangle, .button-prev-triangle {
+        font-size: 10vw;
+    }
 }
+
+@media only screen and (max-width: 995x) {
+    .texts-slider {
+        height: 30vh;
+    }
+}
+.texts-slider {
+    text-align: center; vertical-align: middle; padding-top: 5%;
+}
+.carousel-control { z-index: 99999999999999;}
+
+.carousel-control-next-custom { right: -3vw !important; }
+.carousel-control-prev-custom { left: -3vw !important; }

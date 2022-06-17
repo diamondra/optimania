@@ -1,8 +1,8 @@
 $(document).ready(function() {
     function x() {
         var delay = 1000;
-        var li_count = $('ul.banner-point > li').length -1;
-        $('ul.banner-point > li').each(function (i) {
+        var li_count = $('.carousel-first-slider.active .banner-point > li').length -1;
+        $('.carousel-first-slider.active .banner-point > li').each(function (i) {
             $(this).hide().delay(delay).fadeIn(1850).addClass('text-bigger').delay(100).queue(function (next) {
                 $(this).removeClass('text-bigger');
                 if (li_count == i) x();
@@ -10,20 +10,15 @@ $(document).ready(function() {
             });
             delay += 2000;
         });
-        /*var i = 0;
-        $('ul.banner-point > li').each(function() {
-            var _this = $(this);
-            setTimeout(function() {
-                _this.fadeIn();
-            }, i*4000);
-            i++;
-        });*/
     }
     x();
 
     $('#carousel_accueil').carousel({
         interval: 15000
-    })
+    });
+    $('#carousel_accueil').bind('slide.bs.carousel', function (e) {
+        console.log('slide event!');
+    });
 
     $('#carousel_temoignage').carousel({
         interval: false
