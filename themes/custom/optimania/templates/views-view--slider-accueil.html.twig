@@ -1,44 +1,43 @@
 {% set terms = terms_slider %}
 <div id="carousel_accueil" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-      {% for key,value in terms %}
-          {% if key == 0 %}
-            <div class="carousel-item carousel-first-slider active">
-          {% else %}
+    <div class="carousel-inner">
+        {% for key,value in terms %}
+        {% if key == 0 %}
+        <div class="carousel-item carousel-first-slider active">
+            {% else %}
             <div class="carousel-item carousel-first-slider">
-          {% endif %}
-              <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12 texts-slider">
-                  <div style="margin: 5%;">
-                    <h4 class="chef-accueil-slider">Dirigeants et chef d'entreprise</h4>
-                  </div>
-                  <div>
-                    <h3 class="liberez_du_temps">Libérez du temps!</h3>
-                  </div>
-                  <ul class="banner-point">
-                      {% for text in terms[key].texte %}
-                          <li class="item-slide" style="display: none;"><span>{{ text.properties.value.value }}</span></li>
-                      {% endfor %}
-                  </ul>
+                {% endif %}
+                <div id="slider-accueil">
+                    <div class="title-slider">
+                        <div class="title-inner">
+                            <div class="cafe">
+                                <div class="cafe-inner chef-accueil-slider">Dirigeants et chef d'entreprise</div>
+                            </div>
+                            <div class="mozart">
+                                <div class="mozart-inner liberez_du_temps">Libérez du temps!</div>
+                            </div>
+                            <div>
+                                <ul class="banner-point">
+                                    {% for key1, text in terms[key].texte %}
+                                        <li class="item-slide" style="animation-delay: {{ key1*2.5 }}s;"><span>{{ text.properties.value.value }}</span></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image">
+                        <img src="{{ value.image_url }}" width="100%">
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                 {#<svg width="100" height="auto" viewbox="0 0 100 100" preserveAspectRatio="none" style="position: absolute">
-                    <path d="M0,0
-                     L100,0
-                     C25,50 50,75 0,100z" fill="#ffc000" />
-                  </svg>#}
-                  {#<div class="image_slider_accueil" style="background-image: url({{ value.image_url }});" alt="{{ value.tname }}"></div>#}
-                  <img src="{{ value.image_url }}" width="100%">
-                </div>
-              </div>
             </div>
 
-      {% endfor %}
-  </div>
-    <button class="carousel-control-prev carousel-control-prev-custom" type="button" data-bs-target="#carousel_accueil" data-bs-slide="prev">
-      <i class="fa fa-caret-left button-prev-triangle"></i>
-    </button>
-    <button class="carousel-control-next carousel-control-next-custom" type="button" data-bs-target="#carousel_accueil" data-bs-slide="next">
-      <i class="fa fa-caret-right button-next-triangle"></i>
-    </button>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev carousel-control-prev-custom" type="button" data-bs-target="#carousel_accueil" data-bs-slide="prev">
+            <i class="fa fa-caret-left button-prev-triangle"></i>
+        </button>
+        <button class="carousel-control-next carousel-control-next-custom" type="button" data-bs-target="#carousel_accueil" data-bs-slide="next">
+            <i class="fa fa-caret-right button-next-triangle"></i>
+        </button>
 </div>

@@ -11,7 +11,7 @@ $(document).ready(function() {
             delay += 2000;
         });
     }
-    x();
+    // x();
 
     $('#carousel_accueil').carousel({
         interval: 15000
