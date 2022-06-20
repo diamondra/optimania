@@ -887,3 +887,6 @@ animation-fill-mode: both;
     background: #26b6b31a !important;
     color: #646464 !important;
 }
+.sub-menu {
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 20%);
+}
