@@ -768,7 +768,7 @@ z-index: 2;
     color: blanchedalmond;
     background: #5a5e6245;
     padding: 0 2vw;
-    margin-bottom: 3vh;
+    margin-bottom: 0.5em;
 }
 .title >  .title-inner {
 display: inline-block;
