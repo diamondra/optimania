@@ -25,8 +25,13 @@
     ]
   %}
   <div{{ row.attributes.addClass(row_classes) }}>
-    <div class="col-service">
-        {{- row.content -}}
+    {#<div class="col-service">
+
+    </div>#}
+    <div class="blog_post">
+      <div class="container_copy">
+          {{- row.content -}}
+      </div>
     </div>
   </div>
 {% endfor %}

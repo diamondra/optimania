@@ -5,6 +5,7 @@
 
 body {
     font-family: Arial-nova !important;
+    font-size: 1rem !important;
 }
 
 #header {
@@ -323,21 +324,21 @@ body {
    padding: 10px;
 }
 
-.ligne:hover .title_service {
+/*.ligne:hover {
     background: #fcfcfc;
     color: #009999;
     border-left: 2px solid #273e4d;
     border-right: 2px solid #273e4d;
-}
+}*/
 
-.title_service {
+/*.title_service {
     text-decoration: none;
     text-align: center !important;
-    /*font-size: 4vw;*/
+    !*font-size: 4vw;*!
     color: #26b7b4;
     padding: 5% 5% 5% 5%;
     margin-bottom: 0px;
-}
+}*/
 
 .field_accueil_resume_service {
     padding: 7%;
@@ -365,7 +366,7 @@ body {
 }
 
 .block-services {
-    background: white;
+    background: #faebd740;
 }
 
 .field_accueil_resume_service, .know_more {
@@ -443,11 +444,13 @@ body {
     font-weight: bold;
     padding-top: 5%;
     color: #306b77;
-    font-size: large;
+    /*font-size: large;*/
 }
+
 
 .slick-item {
     box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 20%);
+    border-radius: 5px;
 }
 
 .slick-demo {
@@ -485,7 +488,7 @@ body {
 }
 
 .site-footer {
-    font-size: 1.4rem !important;
+    font-size: 1rem !important;
     background: black;
 }
 
@@ -625,7 +628,7 @@ body {
 
 .content-service h1 {
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
@@ -891,3 +894,38 @@ animation-fill-mode: both;
     box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 20%);
 }
 .control-custom { width: 0% !important; }
+.blog_post {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    height: 100%;
+}
+
+
+.container_copy {
+    padding: 4rem;
+}
+
+.btn_primary {
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #26b7b4, #333333);
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 1px 10px 2rem rgb(31 67 66);
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+    /* margin-top: 6px; */
+    bottom: 1rem;
+    right: 1rem;
+    position: absolute;
+}
+
+.btn_primary:hover {
+    box-shadow: 0px 5px 1rem rgb(49 67 67);
+    color: gainsboro;
+}
+.title_service {color: #bdbdbd;}
