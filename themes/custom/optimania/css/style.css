@@ -901,7 +901,13 @@ animation-fill-mode: both;
     position: relative;
     height: 100%;
 }
-
+.blog_post:hover {
+     background: #7d7b7b;
+     color: whitesmoke;
+ }
+.blog_post:hover .title_service{
+    color: #ffefbd;
+}
 
 .container_copy {
     padding: 4rem;
