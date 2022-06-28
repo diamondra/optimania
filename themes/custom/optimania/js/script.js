@@ -29,8 +29,12 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
-        prevArrow:"<div class='button-prev-triangle slick-prev'></div>",
-        nextArrow:"<div class='button-next-triangle slick-next'></div>",
+        prevArrow:"<button class=\"carousel-control-prev carousel-control-prev-custom control-custom\" type=\"button\" data-bs-target=\"#carousel_temoignage\" data-bs-slide=\"prev\">\n" +
+        "          <i class=\"fa fa-caret-left button-prev-triangle\"></i>\n" +
+        "        </button>",
+        nextArrow:"<button class=\"carousel-control-next carousel-control-next-custom control-custom\" type=\"button\" data-bs-target=\"#carousel_temoignage\" data-bs-slide=\"next\">\n" +
+        "          <i class=\"fa fa-caret-right button-next-triangle\"></i>\n" +
+        "        </button>",
         responsive: [
             {
                 breakpoint: 1024,
