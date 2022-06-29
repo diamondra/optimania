@@ -930,7 +930,7 @@ animation-fill-mode: both;
     position: absolute;
 }
 
-.btn_primary:hover {
+.btn_primary:hover, .btn_primary:active, .btn_primary:focus{
     box-shadow: 0px 5px 1rem rgb(49 67 67);
     color: gainsboro;
 }

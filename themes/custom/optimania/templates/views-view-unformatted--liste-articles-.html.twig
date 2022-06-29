@@ -27,21 +27,21 @@
         %}
       <div{{ row.attributes.addClass(row_classes) }}>
         <div class="slick-item">
-          <a href="http://localhost/optimania/node/{{ row.content['#row'].nid }}">
+          <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}">
               {{- row.content -}}
           </a>
         </div>
       </div>
     <div{{ row.attributes.addClass(row_classes) }}>
         <div class="slick-item">
-            <a href="http://localhost/optimania/node/{{ row.content['#row'].nid }}">
+            <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}">
                 {{- row.content -}}
             </a>
         </div>
     </div>
     <div{{ row.attributes.addClass(row_classes) }}>
         <div class="slick-item">
-            <a href="http://localhost/optimania/node/{{ row.content['#row'].nid }}">
+            <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}">
                 {{- row.content -}}
             </a>
         </div>

@@ -15,9 +15,9 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-<div>
+<div class="row">
     {% for row in rows %}
-      <div class="icon-social-media">
+      <div class="icon-social-media col-lg-12 col-md-4 col-xs-3 col-3">
           {% if row.content['#row']._entity.name.value == "Facebook" %}
             <a target="_blank" href="{{row.content['#row']._entity.field_lien.value[0].uri}}"><i class="fab fa-facebook-f fa-3x social-facebook"></i></a>
           {% elseif row.content['#row']._entity.name.value == "LinkedIn" %}
