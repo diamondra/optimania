@@ -1,0 +1,7 @@
+field.formatter.settings.fa_formatter_int:
+  type: mapping
+  label: 'Icon class'
+  mapping:
+    icon_class:
+      type: string
+      label: 'icon class'

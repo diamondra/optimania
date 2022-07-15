@@ -65,10 +65,12 @@ $term_data = [];
      if(isset($term_obj_temoignage->get('field_image_temoignage')->entity)){
        $url = file_create_url($term_obj_temoignage->get('field_image_temoignage')->entity->getFileUri());
      }
+
      $term_data_temoignage[] = [
          'tid' => $term_temoignage->tid,
          'tname' => $term_temoignage->name,
          'person' => $term_obj_temoignage->get('field_nom')->getValue()[0]['value'],
+         'video' => $term_obj_temoignage->get('field_video'),
          'poste' => $term_obj_temoignage->get('field_poste')->getValue()[0]['value'],
          'secteur'=> $term_obj_temoignage->get('field_secteur')->getValue()[0]['value'],
          'image' => $url,

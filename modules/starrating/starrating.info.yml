@@ -1,0 +1,13 @@
+name: 'Starrating'
+description: 'Provides star rating field type and formatter'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - field
+
+
+# Information added by Drupal.org packaging script on 2021-07-05
+version: '8.x-4.1-alpha3'
+project: 'starrating'
+datestamp: 1625493569

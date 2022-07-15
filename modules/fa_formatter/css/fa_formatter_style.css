@@ -1,0 +1,18 @@
+.fa-formatter {
+
+}
+
+.fa-formatter .rate-value {
+  position:absolute;
+  left:-9999px;
+}
+
+.fa-formatter .rate-image.star-off {
+  font-size: 1.3rem;
+  color: #484848;
+}
+.fa-formatter .rate-image.star-on {
+  font-size: 1.3rem;
+  color: #f8d420;
+}
+

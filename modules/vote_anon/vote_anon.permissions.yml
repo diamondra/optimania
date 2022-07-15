@@ -1,0 +1,3 @@
+administer vote anonymous:
+  title: 'Administer Vote Anonymous'
+  description: 'Allows a user to configure voting settings.'

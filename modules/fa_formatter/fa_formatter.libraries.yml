@@ -1,0 +1,13 @@
+# @file
+# Libraries used by the fa formatter module.
+#
+
+# Usage styling
+# -------------
+# A simple yellow star standard design
+fa_formatter.usage:
+  version: 1.x
+  css:
+    theme:
+      css/fa_formatter_style.css: {}
+

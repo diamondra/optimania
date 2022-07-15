@@ -36,44 +36,49 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
+
 {% set temoignages = terms_temoignage %}
 <div>
-  <div class="title_services_accueil">
-    <h2>Nos clients en témoignent</h2>
-  </div>
-  <div id="carousel_temoignage" class="carousel slide">
-    <div class="row">
-      <div class="carousel_control col-lg-1 col-1">
-        <a class="carousel-control-prev" href="#carousel_temoignage" role="button" data-slide="prev">
-          <div class="button-prev-triangle"></div>
-        </a>
-      </div>
-      <div class="carousel-inner col-lg-10 col-10">
-          {% for key,value in temoignages %}
-          {% if key == 0 %}
-        <div class="carousel-item active">
-            {% else %}
-          <div class="carousel-item">
-              {% endif %}
-            <div class="bloc_temoignage row">
-                 <div class="bloc_contenu_temoignage col-lg-9 col-12">
-                    <div>{{ value.contenu | raw }}</div>
-                 </div>
-                 <div class="bloc_image_temoignage col-lg-3 col-12">
-                  <span class="circle-image">
-                   <img src="{{ value.image }}"/>
-                  </span>
-                 </div>
-            </div>
-          </div>
-            {% endfor %}
-        </div>
-        <div class="carousel_control col-lg-1 col-1">
-          <a class="carousel-control-next" href="#carousel_temoignage" role="button" data-slide="next">
-            <div class="button-next-triangle"></div>
-          </a>
-        </div>
-      </div>
+    <div class="title_services_accueil">
+        <h2>Nos clients en témoignent</h2>
     </div>
-  </div>
-</div>
+    <div id="carousel_temoignage" class="carousel slide" data-bs-ride="carousel">
+        <div class="row">
+            <div class="carousel_control col-lg-1 col-xs-1 col-sm-1 col-md-1 col-1">
+                <button class="carousel-control-prev carousel-control-prev-custom" type="button" data-bs-target="#carousel_temoignage" data-bs-slide="prev">
+                    <i class="fa fa-caret-left button-prev-triangle"></i>
+                </button>
+            </div>
+            <div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 col-10">
+                {% for key,value in temoignages %}
+                {% if key == 0 %}
+                <div class="carousel-item active">
+                    {% else %}
+                    <div class="carousel-item">
+                        {% endif %}
+                        <div class="bloc_temoignage row">
+                            <div class="bloc_contenu_temoignage col-lg-8 col-12">
+                                <div>{{ value.contenu | raw }}</div>
+                            </div>
+                            <div class="bloc_image_temoignage col-lg-4 col-12">
+                                  <span class="circle-image image-temoignage">
+                                   <img src="{{ value.image }}"/>
+                                  </span>
+                                <div class="bloc_image_temoignage_pers">
+                                    <div>{{ value.person }}</div>
+                                    <div>{{ value.poste }}</div>
+                                    <div>{{ value.secteur }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="carousel_control col-lg-1 col-xs-1 col-sm-1 col-md-1 col-1">
+                    <button class="carousel-control-next carousel-control-next-custom" type="button" data-bs-target="#carousel_temoignage" data-bs-slide="next">
+                        <i class="fa fa-caret-right button-next-triangle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
