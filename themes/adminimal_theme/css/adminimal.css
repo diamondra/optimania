@@ -847,3 +847,23 @@ input[type=radio]:disabled:hover {
 .adminimal .media-library-item__remove.button {
   border-radius: 20px;
 }
+
+.btn-add-content {
+  background: #001367;
+  border: 1px solid #001367;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.btn-add-content a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.btn-add-content:hover {
+  background: grey;
+  border-color: grey;
+}
+
+.btn-add-content .fa-plus { padding-right: 5px; }
