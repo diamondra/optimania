@@ -475,7 +475,12 @@ body {
 }
 
 .slick-item:hover {
-    background: #2a4044;
+    background: #162534!important
+}
+
+.slick-item:hover > .views-field-field-description {
+    background: #2a40440a!important;
+    color: black;
 }
 
 .slick-item:hover .slick-item-title {
@@ -932,3 +937,33 @@ animation-fill-mode: both;
     color: gainsboro;
 }
 .title_service {color: #bdbdbd;}
+
+.btn-article-v {
+    text-decoration: none;
+    color: inherit;
+    text-align: left;
+}
+
+.btn-article-v:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-article-v .views-field-title, .btn-article-v .views-field-field-review-rating, .btn-article-v .views-field-field-description {
+    padding-left: 5%;
+    padding-top: 2%;
+}
+.btn-article-v .views-field-title {
+    color: #ffc000;;
+}
+.btn-article-v .fivestar-summary {  padding-bottom: 5%; }
+.fivestar-default { padding-bottom: 2%; }
+.btn-article-v .views-field-field-description {
+    padding-bottom: 5%;
+}
+.btn-article-v .views-field-field-description {
+    padding-bottom: 5%;
+}
+.btn-article-v .views-field-field-review-rating {
+    padding-top: 5%;
+}

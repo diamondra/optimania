@@ -27,24 +27,10 @@
         %}
       <div{{ row.attributes.addClass(row_classes) }}>
         <div class="slick-item">
-          <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}">
+          <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}" class="btn-article-v">
               {{- row.content -}}
           </a>
         </div>
       </div>
-    <div{{ row.attributes.addClass(row_classes) }}>
-        <div class="slick-item">
-            <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}">
-                {{- row.content -}}
-            </a>
-        </div>
-    </div>
-    <div{{ row.attributes.addClass(row_classes) }}>
-        <div class="slick-item">
-            <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}">
-                {{- row.content -}}
-            </a>
-        </div>
-    </div>
     {% endfor %}
 </div>
