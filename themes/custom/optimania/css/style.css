@@ -961,10 +961,12 @@ animation-fill-mode: both;
     padding-left: 0!important;
 }
 .title-mini-article-detail {
+    font-size: 1.3rem;
+    font-weight: bold;
     color: #26b7b4;
-    font-size: 1.2rem;
 }
 .cta-service-article-detail {
+    text-align: center;
     padding: 10%;
     padding-bottom: 5%;
     height: fit-content;
@@ -1013,4 +1015,10 @@ animation-fill-mode: both;
 .title-bd-article{
     text-align: center;
     padding-top: 2rem;
+}
+
+.review-rating-article-detail .fivestar-default{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
