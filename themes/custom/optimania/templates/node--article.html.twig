@@ -69,7 +69,6 @@
 {%
   set classes = [
     'node',
-    'article-service',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
@@ -79,38 +78,36 @@
   ]
 %}
 {{ attach_library('bartik/classy.node') }}
-<div class="row">
-  <div class="col-lg-9 col-md-9 col-9">
-    <article{{ attributes.addClass(classes) }}>
-      <header>
-          {{ title_prefix }}
-          {% if label and not page %}
-            <h2{{ title_attributes.addClass('node__title') }}>
-              <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-            </h2>
-          {% endif %}
-          {{ title_suffix }}
-          {% if display_submitted %}
-            <div class="node__meta">
-                {{ author_picture }}
-              <span{{ author_attributes }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        </span>
-                {{ metadata }}
-            </div>
-          {% endif %}
-      </header>
-      <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-          {{ content }}
+{#<article{{ attributes.addClass(classes) }}>#}
+  {#<header>#}
+    {#{{ title_prefix }}#}
+      {#{% if label %}#}
+      {#<h2 class="title-article-detail">#}
+        {#{{ label }}#}
+      {#</h2>#}
+    {#{% endif %}#}
+    {#{{ title_suffix }}#}
+  {#</header>#}
+  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+      <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-12 img-article-detail">
+              {{ content.field_image }}
+              <div>
+                  <h2 class="title-bd-article">{{ label }}</h2>
+              </div>
+              {{ content.body }}
+              {{ content.field_rating }}
+          </div>
+          <div class="sticky-cta col-lg-4 col-md-4 col-sm-4 col-12 sticky-article-detail">
+              <div class="cta-service-article-detail">
+                  {{ label }}
+                  {{ content.field_description }}
+                  {{ content.field_review_rating }}
+                  <div class="content-btn-cta cta-btn-article-detail">
+                      <a href="#" class="btn-cta">Acheter maintenant</a>
+                  </div>
+              </div>
+          </div>
       </div>
-    </article>
   </div>
-  <div class="sticky-cta col-lg-3 col-md-3 col-3">
-    <div class="cta-service">
-      {{ drupal_view('random_article') }}
-      <div class="content-btn-cta">
-        <a href="#" class="btn-cta">Acheter maintenant</a>
-      </div>
-    </div>
-  </div>
-</div>
+{#</article>#}

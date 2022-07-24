@@ -216,9 +216,8 @@ body {
 .site-branding__logo img { height: 50px; margin-right: 0 !important; }
 
 .node--type-service {
-    /*width: 33.333333%;*/
     box-shadow: 1px -1px 8px -2px grey;
-    padding: 2rem;
+    /*padding: 2rem;*/
 }
 
 .site-branding__text {
@@ -245,22 +244,8 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     height: 100%;
-    /*border-color: transparent transparent #000 transparent;
-    border-radius: 0 0 240px 50%/60px;
-    border: solid 5px #000;*/
 }
 
-/*.image_slider_accueil::after {
-    position: absolute;
-    bottom: 0.75rem;
-    left: -5%;
-    content: "";
-    background-color: #0a6fb4;
-    width: 110%;
-    height: 2.50rem;
-    transform: rotate(4deg);
-    z-index: 20;
-}*/
 .col-container {
     display: table; /* Make the container element behave like a table */
     width: 100%; /* Set full-width to expand the whole page */
@@ -281,29 +266,6 @@ body {
 .item-slide span {
     color: white;
 }
-/*
-.holder{
-    position:absolute;
-    width:10%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    overflow:hidden;
-}
-.holder:before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    background: #ffc412; !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!
-    border-radius:0 0 50% 50%/0 0 100% 100%;
-    transform:scaleX(1.5);
-}
-*/
 
 .title_services_accueil h2 {
     margin-top: 5%;
@@ -554,19 +516,24 @@ body {
     margin-top: 30%;
     height: fit-content;
     border-radius: 3px;
-    box-shadow: 1px -1px 10px -4px grey;
     position: sticky;
     top: 15%;
     background: white;
-    padding: 2rem;
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
 }
 
 .img-cta {
-    width: 80%;
-    margin-left: 10%;
+    /*width: 80%;*/
+    /*margin-left: 10%;*/
+    padding: 10%;
+    padding-bottom: 0;
 }
 .text-cta {
-    font-size: 1.3rem;
+    /*font-size: 2vw;*/
     color: #249390;
     font-weight: bold;
     text-align: center;
@@ -591,15 +558,22 @@ body {
     padding: 12px 30px;
     color: white;
     background:#ff655b ;
+    font-size: 1.1vw;
+}
+
+.btn-cta:hover, .btn-cta:focus, .btn-cta:active{
+    color: #ff655b;
+    background: white;
 }
 
 .content-btn-cta {
     display: flex;
-    flex-direction: row;
+    flex-flow: column wrap;
     -webkit-box-pack: center;
     justify-content: center;
-    color: white;
-    margin-top: 1.5rem;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-bottom: 24px;
 }
 
 .recommend-cta {
@@ -614,6 +588,11 @@ body {
     color: #36c6c5;
     font-weight:bold;
     margin: 5%;
+}
+.recommend-cta .fivestar-default, .recommend-cta .description {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .align-items {
@@ -966,4 +945,72 @@ animation-fill-mode: both;
 }
 .btn-article-v .views-field-field-review-rating {
     padding-top: 5%;
+}
+.description .fivestar-summary {
+    /*font-size: 1.5vw;*/
+}
+.title-article-detail{
+    text-transform: capitalize;
+    color: #487e8c;
+    font-weight: bold;
+}
+.img-article-detail {
+    padding-right: 0!important;
+}
+.sticky-article-detail {
+    padding-left: 0!important;
+}
+.title-mini-article-detail {
+    color: #26b7b4;
+    font-size: 1.2rem;
+}
+.cta-service-article-detail {
+    padding: 10%;
+    padding-bottom: 5%;
+    height: fit-content;
+    border-radius: 3px;
+    position: sticky;
+    top: 15%;
+    background: white;
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+}
+.description-article-detail, .review-rating-article-detail {
+    padding-top: 1rem;
+}
+.cta-btn-article-detail{
+    padding-top: 3rem;
+}
+.rating-article-detail{
+    padding: 1rem;
+}
+
+.polaroid-img {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    margin-bottom: 25px;
+    color: #26b7b4;
+    font-weight: bold;
+}
+
+.container-img {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.img-article-detail{
+    border-radius: 10px;
+}
+.img-article-detail img{
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.title-bd-article{
+    text-align: center;
+    padding-top: 2rem;
 }
