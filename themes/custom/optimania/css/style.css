@@ -963,22 +963,25 @@ animation-fill-mode: both;
 .title-mini-article-detail {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #26b7b4;
+    color: #227c99;
 }
 .cta-service-article-detail {
     text-align: center;
     padding: 10%;
     padding-bottom: 5%;
     height: fit-content;
+    z-index: 11111111;
     border-radius: 3px;
     position: sticky;
     top: 15%;
     background: white;
     width: 100%;
-    box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
+    margin-left: -30%;
+    margin-top: 39%;
 }
 .description-article-detail, .review-rating-article-detail {
     padding-top: 1rem;
@@ -1025,4 +1028,37 @@ animation-fill-mode: both;
 .img-service img{
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.back-img-article-detail {
+    background-position: center !important;
+}
+.parent-sup {
+    position: relative;
+    width: 90%;
+    height: 400px;
+    margin: 10px;
+}
+.child1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    background: #ffc107;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.child2 {
+    z-index: 1;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.child3 {
+    margin-top: 10%;
+    margin-left: 10%;
+    background: #54a8a7;
+}
+.container-title-article{
+    margin-top: 8% !important;
+    background: #f8f8f8;
 }

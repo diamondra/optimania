@@ -90,15 +90,28 @@
   {#</header>#}
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
       <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-12 img-article-detail">
-              {{ content.field_image }}
+          <div class="col-lg-9 col-md-9 col-sm-12 col-12 img-article-detail">
               <div>
-                  <h2 class="title-bd-article">{{ label }}</h2>
+                  <div class="parent-sup">
+                      <div class="child1"></div>
+                      <div style="background-image: url('{{ file_url(content.field_image['#items'].0.entity.uri.value) }}');" class="back-img-article-detail child1 child2"></div>
+                  </div>
               </div>
-              {{ content.body }}
-              {{ content.field_rating }}
+              <div class="row container-title-article">
+                  <div class="col-lg-11 col-md-11 col-sm-11 col-11">
+                      <div>
+                          <h2 class="title-bd-article">{{ label }}</h2>
+                      </div>
+                      {{ content.body }}
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-10">
+                      {{ content.field_rating }}
+                  </div>
+              </div>
           </div>
-          <div class="sticky-cta col-lg-4 col-md-4 col-sm-4 col-12 sticky-article-detail">
+          <div class="sticky-cta col-lg-3 col-md-3 col-sm-12 col-12 sticky-article-detail">
               <div class="cta-service-article-detail">
                   {{ label }}
                   {{ content.field_description }}
