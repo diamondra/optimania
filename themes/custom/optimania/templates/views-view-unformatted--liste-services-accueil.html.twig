@@ -28,7 +28,9 @@
     <div class="blog_post">
       <div class="container_copy">
           {{- row.content -}}
-          <a class="btn_primary" href='{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}'>En savoir plus</a>
+      </div>
+      <div>
+        <a class="btn_primary" href='{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}'>En savoir plus</a>
       </div>
     </div>
   </div>

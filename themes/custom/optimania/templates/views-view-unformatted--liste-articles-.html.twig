@@ -18,8 +18,9 @@
 <div class="title_services_accueil">
     <h2>Nos articles disponibles </h2>
 </div>
+
 <div class="slick-demo">
-    {% for row in rows %}
+    {% for key,row in rows %}
         {%
         set row_classes = [
         default_row_class ? 'views-row',
@@ -28,7 +29,18 @@
       <div{{ row.attributes.addClass(row_classes) }}>
         <div class="slick-item">
           <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}" class="btn-article-v">
-              {{- row.content -}}
+              {#{{- row.content -}}#}
+              <div class="card">
+                  {{- row.content -}}
+                  {#<div class="card-banner">#}
+                      {#<p class="category-tag popular">{{ view.field.title.value(view.result[key]) }}</p>#}
+                      {#<img class="banner-img" src='{{ view.field.field_image.value(view.result[key]) }}' alt=''>#}
+                  {#</div>#}
+                  {#<div class="card-body">#}
+                      {#<p class="blog-hashtag">{{ view.field.title.value(view.result[key]) }}</p>#}
+                      {#<p class="blog-description">{{ view.field.field_description.value(view.result[key]) }}</p>#}
+                  {#</div>#}
+              </div>
           </a>
         </div>
       </div>
