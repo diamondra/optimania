@@ -455,7 +455,7 @@ body {
 
 .site-footer {
     font-size: 1rem !important;
-    background: black;
+    background: #02171e;
 }
 
 .site-footer .block {
@@ -728,7 +728,7 @@ body {
     grid-template-columns: 1fr 2fr;
     align-items: flex-start;
     width: 100%;
-    background: #000000;
+    background: #02171e;
 }
 
 
