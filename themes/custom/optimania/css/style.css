@@ -890,7 +890,7 @@ animation-fill-mode: both;
 /*}*/
 
 .container_copy {
-    padding: 2.5rem;
+    padding: 1.8rem 2.5rem 2.5rem 2.5rem;
 }
 
 .btn_primary {
@@ -899,9 +899,9 @@ animation-fill-mode: both;
     outline: none;
     background: #064057;
     /*background: linear-gradient(90deg, #167472, #343535);*/
-    padding: 0.8rem 1rem;
+    padding: 0.5rem 1rem;
     color: white;
-    font-size: 1rem;
+    font-size: 0.8rem;
     transition: all 0.2s ease-in;
     text-decoration: none;
     bottom: 1rem;
