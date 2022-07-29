@@ -1,0 +1,13 @@
+name: Chatbot API - HelloWorld Intent
+type: module
+description: Demo Intent for Chatbot API
+core: 8.x
+package: Chatbot
+hidden: true
+dependencies:
+  - chatbot_api:chatbot_api
+
+# Information added by Drupal.org packaging script on 2019-10-14
+version: '8.x-2.0-rc1'
+project: 'chatbot_api'
+datestamp: 1571052488

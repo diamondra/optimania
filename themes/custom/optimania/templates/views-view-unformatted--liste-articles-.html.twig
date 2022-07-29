@@ -30,16 +30,8 @@
         <div class="slick-item">
           <a href="{{ path('entity.node.canonical', {'node': row.content['#row'].nid}) }}" class="btn-article-v">
               {#{{- row.content -}}#}
-              <div class="card">
+              <div class="card-article">
                   {{- row.content -}}
-                  {#<div class="card-banner">#}
-                      {#<p class="category-tag popular">{{ view.field.title.value(view.result[key]) }}</p>#}
-                      {#<img class="banner-img" src='{{ view.field.field_image.value(view.result[key]) }}' alt=''>#}
-                  {#</div>#}
-                  {#<div class="card-body">#}
-                      {#<p class="blog-hashtag">{{ view.field.title.value(view.result[key]) }}</p>#}
-                      {#<p class="blog-description">{{ view.field.field_description.value(view.result[key]) }}</p>#}
-                  {#</div>#}
               </div>
           </a>
         </div>
