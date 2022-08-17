@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{#<div{{ attributes.addClass(classes) }}>#}
+  {#{{ title_prefix }}#}
+  {#{% if label %}#}
+    {#<h2{{ title_attributes }}>{{ label }}</h2>#}
+  {#{% endif %}#}
+  {#{{ title_suffix }}#}
+  {#{% block content %}#}
+    {#<div{{ content_attributes.addClass('content') }}>#}
+      {#{{ content }}#}
+    {#</div>#}
+  {#{% endblock %}#}
+{#</div>#}
+{#<div id="block-setmore" class="contextual-region block block-setmore">#}
+
+  {#<div data-contextual-id="block:block=setmore:langcode=fr" data-contextual-token="-BAmn9W-_r8WWQScNWO6ZuMfLFa2JI81HX9toTbckyY" class="contextual"><button class="trigger focusable visually-hidden" type="button" aria-pressed="false">options de configuration Ouvert </button>#}
+
+  {#</div>#}
+  {#<div class="content">#}
+    {#<script type="text/javascript" src="https://setmore.com/js/setmoreFancyBox.js"></script>#}
+    {#<button onclick="javascript:setmorePopup('66afd9ed-f0e1-42fe-9fea-6b8b8fd34b60');" style="cursor:pointer" class="btn btn-md btn-default btn-rdv"><i class="fa-solid fa-calendar-check icon-rdv"></i> Prendre un rendez-vous</button>#}
+  {#</div>#}
+{#</div>#}

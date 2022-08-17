@@ -1,0 +1,15 @@
+name: Setmore
+description: SetMore Appointments.
+package: event
+# version: VERSION
+core_version_requirement: ^8.8 || ^9
+type: module
+# Information added by Drupal.org packaging script on 2022-01-25
+# version: '9.0.0'
+# project: 'bettle'
+# datestamp: 1643119311
+
+# Information added by Drupal.org packaging script on 2022-01-28
+version: '9.0.0'
+project: 'setmore_drupal'
+datestamp: 1643351122

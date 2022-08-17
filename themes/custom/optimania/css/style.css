@@ -1358,3 +1358,20 @@ animation-fill-mode: both;
 .block-abonnementsimplenews-modal label{
     color: #615d5d !important;
 }
+
+.icon-rdv{
+    font-size: x-large;
+    margin-right: 5px;
+}
+
+.btn-rdv{
+    cursor: pointer;
+    position: fixed;
+    bottom: 7em;
+    right: 1em;
+    z-index: 9999999999999999999999999999999999999;
+    background: #ffc000 !important;
+    height: 50px;
+    color: #454343 !important;
+    box-shadow: rgb(0 0 0 / 15%) 0px 3px 12px;
+}
