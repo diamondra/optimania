@@ -81,15 +81,8 @@
 {{ attach_library('bartik/classy.node') }}
 <div class="row">
   <div class="col-lg-9 col-md-9 col-9">
-    <article{{ attributes.addClass(classes) }}>
+    {#<article{{ attributes.addClass(classes) }}>#}
       <header>
-          {{ title_prefix }}
-          {% if label and not page %}
-            <h2{{ title_attributes.addClass('node__title') }}>
-              <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-            </h2>
-          {% endif %}
-          {{ title_suffix }}
           {% if display_submitted %}
             <div class="node__meta">
                 {{ author_picture }}
@@ -100,10 +93,25 @@
             </div>
           {% endif %}
       </header>
-      <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-          {{ content }}
+      <div>
+          <div class="content-service-img">
+              {{ content.field_image_service }}
+          </div>
+          {% if content.body %}
+              {% if label %}
+                <h4 class="service-title">{{ label }}</h4>
+              {% endif %}
+              {{ content.body }}
+          {% endif %}
+
+          {% if content.field_second_contenu %}
+            {% if label %}
+              <h4 class="service-title">{{ label }}</h4>
+            {% endif %}
+            {{ content.field_second_contenu }}
+          {% endif %}
       </div>
-    </article>
+    {#</article>#}
   </div>
   <div class="sticky-cta col-lg-3 col-md-3 col-3">
     <div class="cta-service">

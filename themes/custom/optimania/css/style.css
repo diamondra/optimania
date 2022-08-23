@@ -1029,9 +1029,9 @@ animation-fill-mode: both;
     align-items: center;
     justify-content: space-around;
 }
-.img-service img{
-    border-radius: 4px;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+.service-title{
+    text-align: center;
+    color: cadetblue;
 }
 .container-title-article{
     margin-top: 8% !important;
@@ -1374,4 +1374,12 @@ animation-fill-mode: both;
     height: 50px;
     color: #454343 !important;
     box-shadow: rgb(0 0 0 / 15%) 0px 3px 12px;
+}
+
+.content-service-img{
+    padding-bottom: 20px;
+}
+
+.container-contact-webform{
+    margin-bottom: 7em;
 }
