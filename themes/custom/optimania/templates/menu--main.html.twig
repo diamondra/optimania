@@ -26,29 +26,38 @@
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
 
-<nav id="menu">
-  {{ menus.menu_links(items, attributes, 0) }}
-  {% macro menu_links(items, attributes, menu_level) %}
-    {% import _self as menus %}
-    {% if items %}
-      {% if menu_level == 0 %}
-        <ul{{ attributes.addClass('main-menu') }} id="main-menu">
-      {% else %}
-        <ul class="sub-menu">
-      {% endif %}
-      {% for item in items %}
-        <li{{ item.attributes.addClass(classes) }}>
-          <a href="{{ item.url }}">{{ item.title }}
-            <span class="drop-icon">▾</span>
-            <label title="Toggle Drop-down" class="drop-icon" for="sm1">▾</label>
-          </a>
-          <input type="checkbox">
-          {% if item.below %}
-            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-          {% endif %}
-        </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-  {% endmacro %}
+
+<nav id="menu-nav">
+  <label for="toggleMainNav" class="hamburger-menu"></label>
+  <input type="checkbox" id="toggleMainNav" class="check-toggle" />
+  <label for="toggleMainNav" class="menu-overlay"></label>
+  <div class="main-nav-holder">
+    <ul class="main-nav">
+      <li class="close-nav">
+        <label for="toggleMainNav"></label>
+      </li>
+      {{ menus.menu_links(items, attributes, 0) }}
+        {% macro menu_links(items, attributes, menu_level) %}
+            {% import _self as menus %}
+            {% if items %}
+                {% for key,item in items %}
+                    {% if item.below %}
+                      <li class="has-submenu">
+                        <input type="checkbox" id="label{{ menu_level ~ loop.index }}" class="check-toggle" />
+                        <label for="label{{ menu_level ~ loop.index }}">
+                          <a href="{{ item.url }}">{{ item.title }}</a>
+                        </label>
+                        <i class="fa fa-angle-down menu-caret"></i>
+                        <ul class="submenu">
+                            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                        </ul>
+                      </li>
+                    {% else %}
+                      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endmacro %}
+    </ul>
+  </div>
 </nav>

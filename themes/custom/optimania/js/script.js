@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    $('nav input[type="checkbox"]').on('change', function() {
+        $('.main-nav input[type="checkbox"]').not(this).prop('checked', false);
+        $('.right-nav input[type="checkbox"]').not(this).prop('checked', false);
+    });
     function x() {
         var delay = 1000;
         var li_count = $('.carousel-first-slider.active .banner-point > li').length -1;
