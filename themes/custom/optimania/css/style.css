@@ -1449,6 +1449,52 @@ animation-fill-mode: both;
 .submenu > li:hover {
     background-color: #116f6c;
 }
-.submenu{
-    /*box-shadow: rgb(0 0 0 / 20%) 0px 0px 8px 0px;*/
+.comment-add > a{
+    text-decoration: none;
+    background: #ffc000;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+.comment-add > a:hover{
+    background: aliceblue;
+    color: #26b7b4;
+}
+.comment {
+    display: block;
+    border-bottom: solid 1px #dddddd;
+}
+.comment__content{
+    display: block;
+}
+.comment__time {
+    margin: 8px 0;
+}
+.anonymous-comment-icon {
+    font-size: 1.5rem;
+    border: solid 1px #c8c8c8;
+    border-radius: 50%;
+    padding: 7px;
+    color: #c8c8c8;
+    float: right;
+}
+.user-comment-blog {
+    width: 8%;
+}
+.content-comment-blog {
+    width: 92%;
+}
+.comment__content:after, .comment__content:before {
+    border: 0;
+}
+.comment__content {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    font-size: 0.8rem;
+}
+.comment__meta {
+    padding: 0 5px;
 }
