@@ -84,9 +84,26 @@
 
   <footer class="comment__meta">
     {{ user_picture }}
-    <p class="comment__author">{{ author }}</p>
-    <p class="comment__time">{{ created }}</p>
-    <p class="comment__permalink">{{ permalink }}</p>
+    <div class="row">
+      <div class="col-lg-1 col-md-1 col-sm-2 col-2">
+        <i class="fa fa-user anonymous-comment-icon" aria-hidden="true"></i>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-10 col-10">
+        <p class="comment__author">{{ author }}</p>
+        
+        <div{{ content_attributes.addClass('comment__content') }}>
+          {% if title %}
+            {{ title_prefix }}
+            <h3{{ title_attributes }}>{{ title }}</h3>
+            {{ title_suffix }}
+          {% endif %}
+          {{ content }}
+        </div>
+        <p class="comment__time">{{ created }}</p>
+      </div>
+    </div>
+
+    {# <p class="comment__permalink">{{ permalink }}</p> #}
     {#
       Indicate the semantic relationship between parent and child comments
       for accessibility. The list is difficult to navigate in a screen
@@ -96,13 +113,4 @@
       <p class="visually-hidden">{{ parent }}</p>
     {% endif %}
   </footer>
-
-  <div{{ content_attributes.addClass('comment__content') }}>
-    {% if title %}
-      {{ title_prefix }}
-      <h3{{ title_attributes }}>{{ title }}</h3>
-      {{ title_suffix }}
-    {% endif %}
-    {{ content }}
-  </div>
 </article>
