@@ -27,37 +27,130 @@
 #}
 
 
-<nav id="menu-nav">
-  <label for="toggleMainNav" class="hamburger-menu"></label>
-  <input type="checkbox" id="toggleMainNav" class="check-toggle" />
-  <label for="toggleMainNav" class="menu-overlay"></label>
-  <div class="main-nav-holder">
-    <ul class="main-nav">
-      <li class="close-nav">
-        <label for="toggleMainNav"></label>
-      </li>
-      {{ menus.menu_links(items, attributes, 0) }}
-        {% macro menu_links(items, attributes, menu_level) %}
-            {% import _self as menus %}
-            {% if items %}
-                {% for key,item in items %}
-                    {% if item.below %}
-                      <li class="has-submenu">
-                        <input type="checkbox" id="label{{ menu_level ~ loop.index }}" class="check-toggle" />
-                        <label for="label{{ menu_level ~ loop.index }}">
-                          <a href="{{ item.url }}">{{ item.title }}</a>
-                        </label>
-                        <i class="fa fa-angle-down menu-caret"></i>
-                        <ul class="submenu">
-                            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-                        </ul>
-                      </li>
-                    {% else %}
-                      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+{#<nav id="menu-nav">#}
+{#  <label for="toggleMainNav" class="hamburger-menu"></label>#}
+{#  <input type="checkbox" id="toggleMainNav" class="check-toggle" />#}
+{#  <label for="toggleMainNav" class="menu-overlay"></label>#}
+{#  <div class="main-nav-holder">#}
+{#    <ul class="main-nav">#}
+{#      <li class="close-nav">#}
+{#        <label for="toggleMainNav"></label>#}
+{#      </li>#}
+{#      {{ menus.menu_links(items, attributes, 0) }}#}
+{#        {% macro menu_links(items, attributes, menu_level) %}#}
+{#            {% import _self as menus %}#}
+{#            {% if items %}#}
+{#                {% for key,item in items %}#}
+{#                    {% if item.below %}#}
+{#                      <li class="has-submenu">#}
+{#                        <input type="checkbox" id="label{{ menu_level ~ loop.index }}" class="check-toggle" />#}
+{#                        <label for="label{{ menu_level ~ loop.index }}">#}
+{#                          <a href="{{ item.url }}">{{ item.title }}</a>#}
+{#                        </label>#}
+{#                        <i class="fa fa-angle-down menu-caret"></i>#}
+{#                        <ul class="submenu">#}
+{#                            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}#}
+{#                        </ul>#}
+{#                      </li>#}
+{#                    {% else %}#}
+{#                      <li><a href="{{ item.url }}">{{ item.title }}</a></li>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{#            {% endif %}#}
+{#        {% endmacro %}#}
+{#    </ul>#}
+{#  </div>#}
+{#</nav>#}
+
+{#<div class="whole-main-menu">#}
+{#    <nav class="main-menu">#}
+{#        <ul>#}
+{#            {{ menus.menu_links(items, attributes, 0) }}#}
+{#            {% macro menu_links(items, attributes, menu_level) %}#}
+{#                {% import _self as menus %}#}
+{#                {% if items %}#}
+{#                    {% for key,item in items %}#}
+{#                        {% if item.below %}#}
+{#                            <li>#}
+{#                                <a href="{{ item.url }}">{{ item.title }} <i class="fa fa-caret-down"></i></a>#}
+{#                                <ul class="submenu">#}
+{#                                    {{ menus.menu_links(item.below, attributes, menu_level + 1) }}#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                        {% else %}#}
+{#                            <li><a href="{{ item.url }}">{{ item.title }}</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{#                {% endif %}#}
+{#            {% endmacro %}#}
+{#        </ul>#}
+{#    </nav>#}
+{#</div>#}
+{#<div class="responsive-main-menu">#}
+{#    <div class="nav">#}
+{#        <button class="btn-nav">#}
+{#            <span class="icon-bar top"></span>#}
+{#            <span class="icon-bar middle"></span>#}
+{#            <span class="icon-bar bottom"></span>#}
+{#        </button>#}
+{#    </div>#}
+{#    <div class="nav-content hideNav hidden">#}
+{#        <ul class="nav-list">#}
+{#            {{ menus.menu_links(items, attributes, 0) }}#}
+{#            {% macro menu_links(items, attributes, menu_level) %}#}
+{#                {% import _self as menus %}#}
+{#                {% if items %}#}
+{#                    {% for key,item in items %}#}
+{#                        {% if item.below %}#}
+{#                            <li class="nav-item"><a href="{{ item.url }}" class="item-anchor">{{ item.title }}</a></li>#}
+{#                        {% else %}#}
+{#                            <li class="nav-item"><a href="{{ item.url }}" class="item-anchor">{{ item.title }}</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{#                {% endif %}#}
+{#            {% endmacro %}#}
+{#        </ul>#}
+{#        <div class="line-betwen"></div>#}
+{#        <div class="social-links">#}
+{#            <ul class="social-list">#}
+{#                <li><a href="https://www.facebook.com/mitar.djakovic.7" target="_blank"><i class="fa fa-facebook"></i></a></li>#}
+{#                <li><a href="https://rs.linkedin.com/in/mitar-djakovic-77490ab5" target="_blank"><i class="fa fa-linkedin"></i></a></li>#}
+{#                <li><a href="mailto:mitar-djakovic2401993@hotmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a></li>#}
+{#                <li><a href="https://github.com/roker93" target="_blank"><i class="fa fa-github"></i></a></li>#}
+{#                <li><a href="https://codepen.io/roker2401993" target="_blank"><i class="fa fa-codepen"></i></a></li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+<div id='main-menu' class='main-menu'>
+    <div class='container-menu'>
+        <nav class='navigation'>
+      <span class='hamburger-menu'>
+        <span class='burger-1'></span>
+        <span class='burger-2'></span>
+        <span class='burger-3'></span>
+      </span>
+            <ul class='core-menu'>
+                {{ menus.menu_links(items, attributes, 0) }}
+                {% macro menu_links(items, attributes, menu_level) %}
+                    {% import _self as menus %}
+                    {% if items %}
+                        {% for key,item in items %}
+                            {% if item.below %}
+                                <li>
+                                    <a href="{{ item.url }}">{{ item.title }}<span class='toggle'></span></a>
+                                    <ul class='dropdown-main-menu core-submenu'>
+                                        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
                     {% endif %}
-                {% endfor %}
-            {% endif %}
-        {% endmacro %}
-    </ul>
-  </div>
-</nav>
+                {% endmacro %}
+            </ul>
+        </nav>
+    </div>
+</div>

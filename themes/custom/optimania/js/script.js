@@ -1,4 +1,22 @@
 $(document).ready(function() {
+    $(".core-menu li").hover(
+        function(){
+            //i used the parent ul to show submenu
+            $(this).children('ul').slideDown('fast');
+        },
+        //when the cursor away
+        function () {
+            $('ul', this).slideUp('fast');
+        });
+    //this feature only show on 600px device width
+    $(".hamburger-menu").click(function(){
+        $(".burger-1, .burger-2, .burger-3").toggleClass("open");
+        $(".core-menu").slideToggle("fast");
+    });
+    $(".btn-nav").on("click", function() {
+        $(".nav-content").toggleClass("showNav hideNav").removeClass("hidden");
+        $(this).toggleClass("animated");
+    });
     $('nav input[type="checkbox"]').on('change', function() {
         $('.main-nav input[type="checkbox"]').not(this).prop('checked', false);
         $('.right-nav input[type="checkbox"]').not(this).prop('checked', false);
