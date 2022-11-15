@@ -1611,6 +1611,7 @@ li span.toggle {
     padding: 30px 20px;
 }
 .single-blog {
+    height: 100%;
     border: 1px solid #eee;
 }
 .blog-title h4 {
